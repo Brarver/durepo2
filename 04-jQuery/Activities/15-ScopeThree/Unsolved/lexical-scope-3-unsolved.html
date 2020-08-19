@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lexical Scope</title>
+  </head>
+  <body>
+    <h2>Let's Talk About Scope!</h2>
+
+    <script type="text/javascript">
+      // Example One: Global Scope
+      // -------------------------------------------
+      var a = 1;
+      function one() {
+        console.log('One: ' + a);
+      }
+
+      // What will get console.loged?
+      one();
+
+      // Example Two: Local Scope
+      // -------------------------------------------
+      function twotop() {
+        function two(a) {
+          console.log('Two: ' + a);
+        }
+
+        two(a);
+      }
+
+      // What will get console.loged?
+      twotop();
+
+      // Example Three: Local Scope
+      // -------------------------------------------
+      var a = 5;
+      function three() {
+        var a = 3;
+        console.log('Three: ' + a);
+      }
+
+      // What will get console.loged?
+      three();
+
+      // Example Four: Local Scope
+      // -------------------------------------------
+      function first() {
+        var a = 3;
+
+        function second() {
+          var a = 10;
+
+          function third() {
+            console.log('Four: ' + a);
+          }
+
+          third();
+        }
+
+        console.log('Five: ' + a);
+      }
+      second();
+
+      // What will get console.loged?
+      first();
+    </script>
+  </body>
+</html>
