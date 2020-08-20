@@ -2,10 +2,7 @@
 // Think back to node and how we set a PORT 😉
 
 const logMessage = message => {
-  if (!message) {
-    message = "Hello World!";
-  }
-  console.log(message);
+  console.log(message || 'Hello World')
 };
 
 logMessage();
@@ -15,11 +12,7 @@ logMessage();
 const logTired = (beenWorkingAllDay) => {
   let message;
 
-  if (beenWorkingAllDay) {
-    message = "I'm feeling really tired";
-  } else {
-    message = "I'm wide awake!";
-  }
+  message = beenWorkingAllDay ? "I'm feeling really tired" : "I'm wide awake"
 
   console.log(message);
 };
