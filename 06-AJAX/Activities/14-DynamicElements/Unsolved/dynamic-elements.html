@@ -32,7 +32,7 @@
         // make a variable named results and set it equal to response.data
 
         // =============== put step 2 in between these dashes ==================
-
+        var results = response.data[0].images
         // ========================
 
         // for (var i = 0; i < results.length; i++) {
@@ -48,6 +48,14 @@
         // Prepend the animalDiv variable to the element with an id of gifs-appear-here.
 
         // ============= put step 3 in between these dashes ======================
+
+        results.forEach(result => {
+          const animalDiv = $('<div')
+          const p = $('<p>')
+          p.text(result)
+          const animalImage = $('<img>')
+          
+        })
 
         // ==================================
         // }

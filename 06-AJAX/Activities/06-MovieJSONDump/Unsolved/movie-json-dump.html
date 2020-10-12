@@ -17,7 +17,7 @@
       <input type="text" id="movie-input"><br>
 
       <!-- This button will trigger our AJAX call -->
-      <input id="find-movie" type="submit" value="Movie Search">
+      <input id="find-movie" type="submit" value="Movie Search" >
     </form>
 
     <!-- We'll be dumping our JSON contents in here -->
@@ -46,6 +46,15 @@
         // =================================================================
 
         // CODE GOES HERE
+
+        $.ajax({
+          url: queryURL,
+          method: 'GET'
+        }).then(function(response){
+          console.log(response)
+          var title = $('<h1>' + response.Title + '</h1>')
+          $('#movie-view').text(JSON.stringify(response))
+        })
 
         // =================================================================
       });
